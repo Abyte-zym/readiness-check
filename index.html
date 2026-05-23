@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java面试准备度检测 | 你的面试通过率有多少？</title>
+<meta name="description" content="上千次面试经验总结的评估模型。填10个问题，秒出你的面试准备度%+详细诊断报告。免费。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+.container{max-width:600px;margin:0 auto;padding:24px}
+h1{font-size:1.5em;text-align:center;background:linear-gradient(135deg,#38bdf8,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:20px 0}
+.sub{text-align:center;color:#94a3b8;margin-bottom:24px;font-size:0.9em}
+.q{background:#1e293b;border-radius:12px;padding:16px;margin:12px 0;border-left:4px solid #38bdf8}
+.q h3{font-size:1em;margin-bottom:8px}
+.q label{display:block;padding:8px 12px;margin:6px 0;background:#0f172a;border-radius:8px;cursor:pointer;transition:.2s}
+.q label:hover{background:#334155}
+.q input{margin-right:8px}
+.btn{display:block;width:100%;padding:16px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff;border:none;border-radius:12px;font-size:1.1em;cursor:pointer;margin:20px 0;font-weight:bold}
+.result{display:none;text-align:center;background:#1e293b;border-radius:16px;padding:30px;margin:20px 0}
+.score{font-size:4em;font-weight:bold;background:linear-gradient(135deg,#facc15,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.level{font-size:1.3em;margin:12px 0;padding:8px 20px;border-radius:20px;display:inline-block}
+.share-btn{display:inline-block;margin:10px 6px;padding:10px 24px;background:#334155;color:#e2e8f0;border-radius:20px;text-decoration:none;font-size:0.9em}
+.donate{margin-top:30px;padding:20px;background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:12px;border:2px solid #facc15;text-align:center}
+.donate img{width:180px;border-radius:12px;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🎯 你的Java面试准备度有多少？</h1>
+<p class="sub">上千次BOSS沟通+30+场面试总结的评估模型 · 免费检测</p>
+<div id="quiz">
+<div class="q"><h3>1. HashMap底层数据结构？</h3>
+<label><input type="radio" name="q1" value="3">数组+链表+红黑树，能讲清扩容机制</label>
+<label><input type="radio" name="q1" value="2">知道是数组+链表，说不清红黑树</label>
+<label><input type="radio" name="q1" value="1">不太清楚</label></div>
+<div class="q"><h3>2. Spring Boot自动配置原理？</h3>
+<label><input type="radio" name="q2" value="3">能讲@EnableAutoConfiguration和spring.factories</label>
+<label><input type="radio" name="q2" value="2">知道约定优于配置，说不清源码</label>
+<label><input type="radio" name="q2" value="1">只会用，讲不清原理</label></div>
+<div class="q"><h3>3. Redis缓存穿透/击穿/雪崩？</h3>
+<label><input type="radio" name="q3" value="3">三种都能讲清区别+解决方案+实际代码</label>
+<label><input type="radio" name="q3" value="2">能说出区别，说不出具体方案</label>
+<label><input type="radio" name="q3" value="1">听说过，讲不清楚</label></div>
+<div class="q"><h3>4. 秒杀系统怎么防超卖？</h3>
+<label><input type="radio" name="q4" value="3">Redis Lua脚本+MQ异步+最终一致性全链路</label>
+<label><input type="radio" name="q4" value="2">知道用Redis，说不清Lua和MQ配合</label>
+<label><input type="radio" name="q4" value="1">没做过，不知道</label></div>
+<div class="q"><h3>5. JVM垃圾回收机制？</h3>
+<label><input type="radio" name="q5" value="3">能讲清分代收集+CMS/G1/ZGC区别</label>
+<label><input type="radio" name="q5" value="2">知道Minor GC/Full GC，说不清收集器</label>
+<label><input type="radio" name="q5" value="1">不太懂JVM</label></div>
+<div class="q"><h3>6. MySQL索引优化？</h3>
+<label><input type="radio" name="q6" value="3">EXPLAIN分析+最左前缀+索引失效全掌握</label>
+<label><input type="radio" name="q6" value="2">知道加索引，不会看执行计划</label>
+<label><input type="radio" name="q6" value="1">不太会优化SQL</label></div>
+<div class="q"><h3>7. 有没有完整的项目经验？</h3>
+<label><input type="radio" name="q7" value="3">有2个+完整项目，能流畅介绍</label>
+<label><input type="radio" name="q7" value="2">有项目但不完整，介绍会卡壳</label>
+<label><input type="radio" name="q7" value="1">没有可展示的项目</label></div>
+<div class="q"><h3>8. 算法刷题量？</h3>
+<label><input type="radio" name="q8" value="3">LeetCode 200+，常见题型有思路</label>
+<label><input type="radio" name="q8" value="2">50-200题，简单题能写</label>
+<label><input type="radio" name="q8" value="1">不到50题</label></div>
+<div class="q"><h3>9. 微服务/分布式了解程度？</h3>
+<label><input type="radio" name="q9" value="3">Nacos+Sentinel+Gateway+MQ都能讲</label>
+<label><input type="radio" name="q9" value="2">了解概念，没实操过</label>
+<label><input type="radio" name="q9" value="1">不了解微服务</label></div>
+<div class="q"><h3>10. 面试沟通和自我介绍？</h3>
+<label><input type="radio" name="q10" value="3">自信流畅，能引导面试官问自己擅长的</label>
+<label><input type="radio" name="q10" value="2">基本能说，偶尔紧张</label>
+<label><input type="radio" name="q10" value="1">容易紧张，表达不清</label></div>
+</div>
+<button class="btn" onclick="calc()">🔍 立即检测我的面试准备度</button>
+<div class="result" id="result">
+<div class="score" id="score">0%</div>
+<div class="level" id="level"></div>
+<p style="margin:16px 0;color:#94a3b8" id="advice"></p>
+<p style="font-size:0.85em;color:#38bdf8">📊 基于上千次面试经验的数据模型</p>
+<div style="margin-top:20px">
+<a href="#" class="share-btn" onclick="shareResult()">📤 分享结果</a>
+<a href="https://Abyte-zym.github.io/arsenal/" class="share-btn" style="background:linear-gradient(135deg,#38bdf8,#818cf8)">🚀 免费弹药库</a>
+</div>
+</div>
+<div class="donate">
+<p style="color:#facc15;font-weight:bold">想针对性提升？</p>
+<p style="color:#94a3b8;font-size:0.9em">弹药库有40+免费工具+¥9.9起装备商店</p>
+<a href="https://Abyte-zym.github.io/arsenal/shop.html" style="color:#38bdf8;font-size:1em">🛒 进入装备商店</a>
+</div>
+</div>
+<script>
+function calc(){
+let total=0, max=0;
+for(let i=1;i<=10;i++){
+let q=document.querySelector('input[name="q'+i+'"]:checked');
+if(q){total+=parseInt(q.value);max+=3}else{max+=3}
+}
+let pct=Math.round(total/max*100);
+let level,advice;
+if(pct>=80){level='🏆 面试王者 · 准备充分，大胆去面！';advice='你的准备度超过85%的候选人。建议直接冲大厂，弹药库¥49模拟面试帮你做最后打磨。';}
+else if(pct>=60){level='📈 稳步提升中 · 基础扎实，查漏补缺即可';advice='你的弱项在核心原理和项目深度。弹药库免费工具系统刷一遍，¥9.9押题密卷精准补短板。';}
+else if(pct>=40){level='⏳ 需要加速 · 方向对了，但覆盖不够';advice='建议用弹药库免费工具系统学习，¥29.9全家桶快速补齐基础。';}
+else{level='🌱 起步阶段 · 别急，按路线一步步来';advice='从弹药库免费题库开始，每天10题，两周后重新测试。';}
+document.getElementById('score').innerText=pct+'%';
+document.getElementById('level').innerText=level;
+document.getElementById('advice').innerText=advice;
+document.getElementById('result').style.display='block';
+document.getElementById('quiz').style.display='none';
+document.querySelector('.btn').style.display='none';
+document.querySelector('.sub').style.display='none';
+window.scrollTo(0,0);
+}
+function shareResult(){
+let score=document.getElementById('score').innerText;
+let level=document.getElementById('level').innerText;
+let text='我的Java面试准备度是 '+score+' - '+level+' 你也来测一下？免费👇\nhttps://Abyte-zym.github.io/readiness-check/';
+if(navigator.share){navigator.share({title:'Java面试准备度检测',text:text,url:'https://Abyte-zym.github.io/readiness-check/'})}
+else{navigator.clipboard.writeText(text);alert('已复制！分享到朋友圈/小红书/群聊')}
+}
+</script>
+</body>
+</html>
